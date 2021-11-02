@@ -57,7 +57,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifdef ASSIMP_USE_HUNTER
 #include <zip/zip.h>
 #else
-#include <contrib/zip/src/zip.h>
+#include <zip/src/zip.h>
 #endif
 
 namespace Assimp {
