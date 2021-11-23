@@ -1,3 +1,5 @@
+include "contrib/zlib"
+
 project "assimp"
   kind "StaticLib"
   language "C++"
@@ -65,7 +67,6 @@ project "assimp"
       "ASSIMP_BUILD_NO_NDO_IMPORTER",
       "ASSIMP_BUILD_NO_IFC_IMPORTER",
       "ASSIMP_BUILD_NO_XGL_IMPORTER",
-      --"ASSIMP_BUILD_NO_FBX_IMPORTER",
       "ASSIMP_BUILD_NO_ASSBIN_IMPORTER",
       "ASSIMP_BUILD_NO_GLTF_IMPORTER",
       "ASSIMP_BUILD_NO_C4D_IMPORTER",
@@ -116,12 +117,16 @@ project "assimp"
   
   links
   {
-    "contrib/zlib/bin/zlib.lib"
+    "zlib"
   }
   
   filter "system:linux"
     pic "On"
     systemversion "latest"
+    
+    defines {
+      "ASSIMP_BUILD_NO_FBX_IMPORTER"
+    }
     
   filter "system:windows"
     systemversion "latest"
