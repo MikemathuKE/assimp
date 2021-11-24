@@ -482,6 +482,6 @@ void X3DImporter::ParseHelper_Node_Exit() {
     }
 }
 
-#endif // !ASSIMP_BUILD_NO_X3D_IMPORTER
-
 } // namespace Assimp
+
+#endif // !ASSIMP_BUILD_NO_X3D_IMPORTER
